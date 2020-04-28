@@ -1,38 +1,240 @@
-.App {
+:root{
+  --color1:#010F1C;
+  --color2: #0f4c81;
+  --error: #F44336;
+  --lightgreen: #34D244;
+  --skyblue: #64B7FF;
+  --grey: #B5B5B5;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Rambla&display=swap');
+
+.text-grey{
+  color:var(--grey);
+}
+body{
+  font-family: 'Rambla', sans-serif !important;
+  background-color: var(--color1) !important;
+  color:white !important;
+}
+.banner-img {
+  padding: 13vh 8vw;
+}
+button.navbar-toggler, button.navbar-toggler.collapsed,  .navbar-toggler:focus{
+  border: none;
+  outline: none;
+}
+.navbar-dark .navbar-toggler-icon{
+  background-image:url('./images/menu.png') !important;
+  height: 35px;
+  width: 35px;
+}
+.banner-text {
   text-align: center;
+  font-size: 27px;
+  padding:0 10vw;
+}
+.sign-in-btn {
+  width: 40vw;
+  margin-top: 8vh;
+  background: white;
+  border-radius: 15px;
+  border: none;
+  font-variant: all-petite-caps;
+  font-weight: bold;
+  padding-bottom: .6vh;
+  font-size: 23px;
+  outline: none !important;
+}
+.sign-up-btn {
+  display: block;
+  margin: .8vh 0;
+  font-size: 13px;
+  text-decoration: underline !important;
+}
+.container-80vh input {
+  width: 300px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 20px;
+  padding: 8px;
+}
+.container-80vh{
+  padding:30vh 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.color-inherit{
+  color: inherit;
+}
+.sign-in-form input {
+  width: 315px;
+  margin: 10px auto;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+  outline: none;
+  font-size: 15px;
+}
+.sign-in-form button {
+  background-color: var(--color2);
+  color: white;
+  margin: auto;
+  font-size: 16px;
+}
+.sign-in-form {
+  margin-top: 25vh;
+}
+.sign-in-form span {
+  font-size: 14px;
+  text-align: center;
+  display: block;
+  width: 300px;
+  margin: 15px auto;
+}
+.sign-in-form span {
+  font-size: 14px;
+  text-align: center;
+  display: block;
+  width: 300px;
+  margin: 15px auto;
+  color: var(--error);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Loading */
+.loading {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+/* dashboard*/
+.tasks-count .count {
+  font-size: 25px;
+  font-weight: bold;
+}
+.bottom-btn.active {
+  background: white;
+  color: var(--color1);
+  font-weight: bold;
+  padding: 3px 9px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  border-radius: 7px;
+}
+.bottom-nav {
+  display: flex;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  align-items: flex-end;
+  width: 100%;
+  justify-content: space-around;
+  background: var(--color1);
+}
+.bottom-btn img {
+  width: 20px;
+}
+.bottom-btn.active img {
+  width: 24px;
+}
+.add-task-btn img {
+  width: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.add-task {
+  background: #34D244;
+  min-width: 170px;
+  min-height: 130px;
+  border-radius: 20px;
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+}
+.current-tasks::-webkit-scrollbar, .next-tasks::-webkit-scrollbar {
+  background: transparent;
+}
+.task-items-2 {
+  display: flex;
+  margin-right: -30px;
+  margin-left: auto;
+}
+.pointer{
+  cursor: pointer;
+}
+.vertical-div-2 {
+  transform: rotate(90deg);
+  min-width: 110px;
+  text-align: center;
+  padding-top: 12px;
+}
+.vertical-div-2 img {
+  display: block;
+  margin: auto;
+}
+.date-div {
+  padding: 30px 10px;
+}
+.current-tasks, .next-tasks {
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  justify-content: left;
+}
+.vertical-div {
+  transform: rotate(-90deg);
+  display: inline-block;
+  min-width: 100px;
+  height: 50px;
+  margin-left: -15px;
+}
+.vertical-div img {
+  display: block;
+  margin: auto;
+}
+.date-div .time {
+  font-size: 21px;
+  padding: 0 10px;
+}
+.task-item .task-title {
+  color: #FF2D2D;
+  font-weight: 600;
+}
+.task-items {
+  display: flex;
+  width: 80%;
+  margin-left: -20px;
+}
+.task-item {
+  background: white;
+  padding: 15px;
+  border-radius: 20px;
+  min-width: 160px;
+  min-height: 130px;
+  margin-right: 15px;
+  position: relative;
+}
+.task-footer{
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  width: 84%;
+  margin-right: 8%;
+  color: #888888;
+  font-size: 13px;
+  align-items: center;
+}
+
+@media (min-width:800px){
+  .container {
+      max-width: 70% !important;
+      text-align: center !important;
   }
-  to {
-    transform: rotate(360deg);
+  .sign-up-btn {
+    padding-bottom: 5vh;
+  }
+  .sign-in-btn{
+    width:20vw;
   }
 }
